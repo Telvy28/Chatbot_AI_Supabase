@@ -7,6 +7,18 @@ from utils.chatbot import ImportacionesChatbot
 # Cargar variables
 load_dotenv()
 
+# Función helper para leer variables
+def get_env(key, default=None):
+    """Lee de st.secrets en producción, .env en local"""
+    if hasattr(st, 'secrets') and key in st.secrets:
+        return st.secrets[key]
+    return os.getenv(key, default)
+
+# Usa esta función en lugar de os.getenv
+SUPABASE_URL = get_env("SUPABASE_URL")
+SUPABASE_KEY = get_env("SUPABASE_KEY")
+GROQ_API_KEY = get_env("GROQ_API_KEY")
+
 # Configuración de página
 st.set_page_config(
     page_title="Chatbot Importaciones IA", 
