@@ -6,10 +6,13 @@ python-dotenv==1.0.0
 pandas==2.2.0
 numpy==1.26.3
 
+# Database - AGREGADO
+psycopg2-binary==2.9.9
+
 # Supabase
 supabase==2.10.0
 
-# AI - VERSIONES COMPATIBLES
+# AI
 openai==1.58.1
 langchain==0.3.14
 langchain-openai==0.2.14
