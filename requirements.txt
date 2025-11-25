@@ -3,21 +3,22 @@ streamlit==1.31.0
 python-dotenv==1.0.0
 
 # Data Processing
-pandas==2.1.4
+pandas==2.2.0
+numpy==1.26.3
 
 # Supabase Client (v4.0)
-supabase==2.3.4
+supabase==2.10.0
 gotrue==2.12.4
 httpx==0.25.2
 
 # AI Providers
-openai==1.10.0  # Compatible con OpenAI y DeepSeek
-groq==0.4.1     # Para Groq
+openai==1.57.4  # Compatible con OpenAI y DeepSeek
+groq==0.13.1     # Para Groq
 
 # LangChain Stack (v5.0)
-langchain==0.1.4
-langchain-openai==0.0.5
-langchain-community==0.0.16
+langchain==0.3.14
+langchain-openai==0.2.14
+langchain-community==0.3.14
 langchain-core==0.1.16
 
 # Database Connectors
