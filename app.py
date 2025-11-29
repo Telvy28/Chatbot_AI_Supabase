@@ -26,6 +26,34 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="expanded"
 )
+# CSS personalizado
+st.markdown("""
+<style>
+    .block-container {
+        padding-top: 1rem !important;
+    }
+    .main > div {
+        padding-left: 1rem !important;
+    }
+    [data-testid="stSidebar"] {
+        padding-top: 2rem !important;
+    }
+    [data-testid="stSidebar"] h1 {
+        margin-bottom: 0.5rem !important;
+    }
+    .firma {
+        font-size: 0.85rem;
+        color: #666;
+        margin-top: -0.5rem;
+        margin-bottom: 1rem;
+        font-style: italic;
+    }
+    iframe {
+        display: block;
+        margin: 0 auto;
+    }
+</style>
+""", unsafe_allow_html=True)
 
 # CSS MEJORADO: Sidebar más estrecho y mejor distribución
 st.markdown("""
@@ -78,7 +106,10 @@ db = init_db()
 
 # ========== SIDEBAR: CHATBOT ==========
 with st.sidebar:
-    st.title("🤖 Asistente IA")
+    st.markdown("# 🤖 Asistente IA")
+    st.markdown('<p class="firma">by Telvy Pizarro</p>', unsafe_allow_html=True)
+    st.markdown("---")
+    # ... resto de tu código
     
     # Selectores
     chat_mode = st.radio(
