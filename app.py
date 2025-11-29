@@ -55,44 +55,63 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-# CSS MEJORADO: Sidebar más estrecho y mejor distribución
+# CSS personalizado
 st.markdown("""
 <style>
-    /* Sidebar más estrecho */
-    section[data-testid="stSidebar"] {
-        width: 320px !important;
-        min-width: 320px !important;
-        max-width: 320px !important;
-    }
-    
-    /* Ajuste del contenido principal cuando hay sidebar */
-    .main > div {
-        margin-left: 320px;
-    }
-    
-    /* Ajuste global */
+    /* Reducir padding superior */
     .block-container {
-        padding-top: 2rem;
-        padding-bottom: 1rem;
-        max-width: 100%;
+        padding-top: 1rem !important;
+        padding-bottom: 0rem !important;
+        max-width: 100% !important;
     }
     
-    /* Estilo para el contenedor del Power BI */
-    .powerbi-container {
-        margin-top: 20px;
-        height: 85vh;
-        width: 100%;
+    /* Eliminar espacio lateral del main */
+    .main > div {
+        padding-left: 0.5rem !important;
+        padding-right: 0.5rem !important;
+        max-width: 100% !important;
     }
     
-    /* Mejoras en el chat */
-    .stChatMessage {
-        font-size: 0.9rem;
+    /* Contenedor del dashboard más ancho */
+    [data-testid="column"] {
+        padding-left: 0rem !important;
+        padding-right: 0rem !important;
     }
     
-    /* Input del chat más visible */
-    .stChatInputContainer {
-        padding-top: 0.5rem;
-        border-top: 1px solid #e0e0e0;
+    /* Power BI iframe responsive y centrado */
+    iframe {
+        display: block;
+        margin: 0 auto;
+        max-width: 98% !important;
+        width: 100% !important;
+    }
+    
+    /* Sidebar más compacta */
+    [data-testid="stSidebar"] {
+        padding-top: 2rem !important;
+    }
+    
+    [data-testid="stSidebar"] > div:first-child {
+        padding-top: 0rem !important;
+    }
+    
+    [data-testid="stSidebar"] h1 {
+        margin-top: 0rem !important;
+        margin-bottom: 0.5rem !important;
+        padding-top: 0rem !important;
+    }
+    
+    .firma {
+        font-size: 0.85rem;
+        color: #666;
+        margin-top: -0.5rem;
+        margin-bottom: 1rem;
+        font-style: italic;
+    }
+    
+    /* Eliminar scroll horizontal */
+    .main {
+        overflow-x: hidden !important;
     }
 </style>
 """, unsafe_allow_html=True)
